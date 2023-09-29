@@ -3,7 +3,7 @@ button {
 }
 @media (min-width: 768px) {
   .bottom {
-    width: 100%;
+    width: 50%;
   }
 }
 .symbols {
