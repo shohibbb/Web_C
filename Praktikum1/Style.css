@@ -1,0 +1,13 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    color: burlywood;
+}
+.table-1{
+    background-color: gold;
+    border:solid;
+}
+td,th {
+    border: 1px solid black;
+    padding: 5px;
+}
