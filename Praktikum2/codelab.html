@@ -10,12 +10,12 @@
     <form>
       <label for="Bilangan pertama">Bilangan pertama</label>
       <input type="number" name="bilper" id="bilper" />
-      <label for="Bilangan pertama">Bilangan kedua</label>
+      <label for="Bilangan kedua">Bilangan kedua</label>
       <input type="number" name="bildua" id="bildua" />
       <br />
       <br />
       <button onclick="Sum()">jumlah</button>
-      <button onclick="clear()">ulang</button>
+      <button onclick="clearFields()">ulang</button>
     </form>
 
     <script>
@@ -26,7 +26,11 @@
         const hasil = parseInt(bilper) + parseInt(bildua);
         alert("hasil penjumlahan = " + hasil);
       }
-      function clear() {}
+
+      function clearFields() {
+        document.getElementById("bilper").value = "";
+        document.getElementById("bildua").value = "";
+      }
     </script>
   </body>
 </html>

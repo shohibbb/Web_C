@@ -3,42 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>Form Validasi</title>
+    <link rel="stylesheet" href="codelab.css" />
+    <script src="codelab.js"></script>
   </head>
   <body>
     <form>
-      <table>
-        <tr>
-          <td>
-            <label for="nama">Nama</label>
-          </td>
-          <td>
-            <input type="text" id="nama" name="nama" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label for="email">email</label>
-          </td>
-          <td>
-            <input type="text" id="NIM" name="NIM" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <label for="Addres">Alamat</label>
-          </td>
-          <td>
-            <textarea name="Alamat" id="" cols="21" rows="5"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>
-            <button type="button">Submit</button>
-          </td>
-        </tr>
-      </table>
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+
+      <label for="alamat">Alamat:</label>
+      <textarea id="alamat" name="alamat" rows="4"></textarea>
+
+      <button onclick="validateForm()">Submit</button>
     </form>
   </body>
 </html>

@@ -3,5 +3,35 @@ body {
 }
 form {
   background-color: aliceblue;
-  padding: auto;
+  padding: 100px;
+}
+body {
+  background-color: cyan;
+}
+form {
+  background-color: white;
+  padding: 20px;
+  width: 400px;
+  margin: 100px auto;
+  text-align: left;
+  border-radius: 10px;
+}
+input[type="text"],
+input[type="email"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+}
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+}
+button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
