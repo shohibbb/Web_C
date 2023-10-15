@@ -3,14 +3,14 @@
   --darker: #1f2937;
   --darkest: #111827;
   --grey: #6b7280;
-  --light: #eee;
   --pink: #ec4899;
-  --purple: #885cf6;
+  --purple: #8b5cf6;
+  --light: #eee;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
   font-family: "Fira sans", sans-serif;
 }
 
@@ -18,8 +18,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--dark);
   color: #fff;
+  background-color: var(--dark);
 }
 
 header {
@@ -36,7 +36,7 @@ header h1 {
   margin-bottom: 1rem;
 }
 
-#new-task-list {
+#new-task-form {
   display: flex;
 }
 
@@ -91,8 +91,9 @@ main {
 .task-list {
   padding: 1rem;
 }
+
 .task-list h2 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 300;
   color: var(--grey);
   margin-bottom: 1rem;
@@ -107,28 +108,34 @@ main {
   margin-bottom: 1rem;
 }
 
-#tasks .task .content .text {
+.task .content {
+  flex: 1 1 0%;
+}
+
+.task .content .text {
   color: var(--light);
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   width: 100%;
   display: block;
   transition: 0.4s;
 }
 
-#tasks .task .content .text:not(:read-only) {
+.task .content .text:not(:read-only) {
   color: var(--pink);
 }
 
-#tasks .task .actions {
+.task .actions {
   display: flex;
-  margin: 0 --0.5rem;
+  margin: 0 -0.5rem;
 }
+
 .task .actions button {
   cursor: pointer;
   margin: 0 0.5rem;
   font-size: 1.125rem;
   font-weight: 700;
-  text-transform: 0.4s;
+  text-transform: uppercase;
+  transition: 0.4s;
 }
 
 .task .actions button:hover {
