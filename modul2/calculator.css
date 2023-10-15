@@ -43,7 +43,7 @@ form .display input {
   text-align: right;
   flex: 1;
   font-size: 45px;
-  box-shadow: none;
+  box-shadow: #33ffd8;
 }
 
 form input.operator {
