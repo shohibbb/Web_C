@@ -1,0 +1,62 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-box {
+  flex: 1;
+  padding: 10px;
+  text-align: start;
+}
+
+.footer-box-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 500px;
+}
+
+.footer-box-image img {
+  margin-top: 20%;
+}
+
+.footer-box-image p {
+  margin-top: 20%;
+}
+
+.content,
+.logo-twitter,
+.logo-ig {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.content img,
+.logo-ig img,
+.logo-twitter img {
+  height: 30px;
+  width: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+  }
+
+  .footer-box-image {
+    width: 100%;
+  }
+
+  .footer-box {
+    text-align: center;
+  }
+
+  .footer-box img,
+  .footer-box p {
+    margin-top: 10%;
+  }
+}
