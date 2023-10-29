@@ -1,21 +1,22 @@
 .menu {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
-.left,
-.center,
-.right {
-  flex: 1;
+nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .horizontal-list {
   list-style: none;
   padding: 0;
   display: flex;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -23,10 +24,36 @@
   display: inline;
 }
 
-.action-button-signup {
+.action-buttons {
   display: flex;
-  margin-left: auto;
+  gap: 10px;
+  border-radius: 50px;
 }
+
+.action-button-signup {
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 .action-button-login {
-  margin: 20px;
+  border-radius: 10px;
+  background-color: #3498db;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
 }
