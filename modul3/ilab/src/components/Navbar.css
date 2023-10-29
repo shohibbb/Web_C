@@ -1,18 +1,32 @@
 .menu {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left,
+.center,
+.right {
+  flex: 1;
+  display: flex;
   align-items: center;
 }
 
-nav ul {
+.horizontal-list {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 20px;
 }
 
-nav li {
-  align-items: center;
-  margin: 0 10px;
+.horizontal-list li {
+  display: inline;
+}
+
+.action-button-signup {
+  display: flex;
+  margin-left: auto;
+}
+.action-button-login {
+  margin: 20px;
 }
