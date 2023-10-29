@@ -1,4 +1,4 @@
-nav {
+.menu {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,8 +7,12 @@ nav {
 nav ul {
   list-style: none;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav li {
-  margin-right: 1rem;
+  align-items: center;
+  margin: 0 10px;
 }
