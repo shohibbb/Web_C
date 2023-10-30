@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  background-color: #33191c;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.footer-box {
+  flex: 1;
+  color: white;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sosmed {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 10%;
+  height: 38px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sosmed p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}

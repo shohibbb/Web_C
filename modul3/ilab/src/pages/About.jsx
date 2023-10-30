@@ -8,7 +8,6 @@ const About = () => {
     <div>
       <Navbar />
       <Hero />
-
       <Footer />
     </div>
   );

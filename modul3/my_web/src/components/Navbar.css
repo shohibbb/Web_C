@@ -1,0 +1,29 @@
+.navbar {
+  background-color: #38191a;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.right {
+  margin-left: 10px;
+}
+.title-web {
+  color: white;
+  font-family: Inknut Antiqua;
+}
+.circle-button {
+  background-color: #673c41;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.circle-button img {
+  width: 90%;
+  height: 90%;
+  object-fit: fill;
+}
