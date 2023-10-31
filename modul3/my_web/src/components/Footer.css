@@ -40,3 +40,16 @@
   justify-content: center;
   white-space: nowrap;
 }
+
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column; /* Tampilkan sosmed dalam kolom */
+    align-items: center; /* Tengah secara vertikal */
+  }
+
+  .sosmed {
+    width: auto; /* Agar ikon dan teks tidak terlalu besar */
+    margin-top: 0; /* Hapus margin atas */
+    gap: 5px; /* Sesuaikan jarak */
+  }
+}
