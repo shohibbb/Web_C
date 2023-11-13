@@ -10,8 +10,8 @@
 .item {
   background-color: #673c41;
   border-radius: 20%;
-  width: 160px;
-  height: 133px;
+  width: 100px;
+  height: 96px;
   cursor: pointer;
   margin-right: 10px;
   margin-left: 10px;
@@ -28,9 +28,9 @@
 
 .box {
   display: flex;
-  flex-wrap: nowrap; /* Mengatur agar elemen-elemen dalam satu baris */
-  overflow-x: auto; /* Tampilkan scroller horizontal jika diperlukan */
-  max-width: 100%; /* Lebar maksimum 100% dari parent container */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .button {
@@ -42,7 +42,7 @@
 
 @media (max-width: 768px) {
   .button {
-    font-size: 16px; /* Atur ukuran font lebih kecil pada layar yang lebih kecil */
-    margin-bottom: 5px; /* Atur margin-bottom yang lebih kecil */
+    font-size: 16px;
+    margin-bottom: 5px;
   }
 }

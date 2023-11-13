@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -11,6 +12,11 @@ export const Navbar = () => {
         <h3>Galaxy Solusindo</h3>
       </div>
       <div>
+        <Link to="/">
+          <button className="circle-button">
+            <img src="images/home.png" alt="user" srcset="" />
+          </button>
+        </Link>
         <button className="circle-button">
           <img src="images/search-icon.png" alt="search" srcset="" />
         </button>
@@ -20,9 +26,11 @@ export const Navbar = () => {
         <button className="circle-button">
           <img src="images/message-circle.png" alt="message" srcset="" />
         </button>
-        <button className="circle-button">
-          <img src="images/user-icon.png" alt="user" srcset="" />
-        </button>
+        <Link to="/login">
+          <button className="circle-button">
+            <img src="images/user-icon.png" alt="user" srcset="" />
+          </button>
+        </Link>
       </div>
     </div>
   );
