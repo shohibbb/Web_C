@@ -14,4 +14,4 @@ function generator($n)
         }
     }
 }
-generator(10);
+generator(30);
