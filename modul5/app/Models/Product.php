@@ -22,7 +22,7 @@ class Product extends DatabaseConfig
 
     public function findAll()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT * FROM product";
         $result = $this->conn->query($sql);
         $this->conn->close();
         $data = [];
@@ -34,7 +34,7 @@ class Product extends DatabaseConfig
 
     public function findById($id)
     {
-        $sql = "SELECT * FROM products WHERE id = ?";
+        $sql = "SELECT * FROM product WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -50,7 +50,7 @@ class Product extends DatabaseConfig
     public function create($data)
     {
         $productName = $data['product_name'];
-        $query = 'INSERT INTO products(product_name) VALUES (?)';
+        $query = 'INSERT INTO product(product_name) VALUES (?)';
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("s", $productName);
         $stmt->execute();
@@ -61,7 +61,7 @@ class Product extends DatabaseConfig
     {
         $productName = $data['product_name'];
 
-        $query = 'UPDATE products SET product_name = ? WHERE id = ?';
+        $query = 'UPDATE product SET product_name = ? WHERE id = ?';
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('si', $productName, $id);
         $stmt->execute();
@@ -70,7 +70,7 @@ class Product extends DatabaseConfig
 
     public function destroy($id)
     {
-        $query = 'DELETE FROM products WHERE id = ?';
+        $query = 'DELETE FROM product WHERE id = ?';
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $id);
         $stmt->execute();
