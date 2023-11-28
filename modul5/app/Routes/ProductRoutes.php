@@ -2,7 +2,7 @@
 
 namespace app\Routes;
 
-include "app/Controller/ProductsController.php";
+include "app/Controller/ProductController.php";
 
 use app\Controller\ProductController;
 use app\Models\Product;
