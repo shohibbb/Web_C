@@ -76,4 +76,41 @@ class Product extends DatabaseConfig
         $stmt->execute();
         $this->conn->close();
     }
+
+    public function findAllWithCategory()
+    {
+        $sql = "SELECT product.product_name ,description.producer,description.isi_bersih,description.jenis 
+        FROM product 
+        JOIN description on product.id = description.id";
+
+        $result = $this->conn->query($sql);
+        $this->conn->close();
+
+        $data = [];
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+
+        return $data;
+    }
+
+    public function updateDescription($colomn, $id)
+    {
+        $sql = "UPDATE description SET $colomn = ? WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("si", $colomn, $id);
+        $stmt->execute();
+        $stmt->close();
+        $this->conn->close();
+    }
+
+    public function deleteDescription($id)
+    {
+        $sql = "DELETE FROM description WHERE id_desc = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $stmt->close();
+        $this->conn->close();
+    }
 }

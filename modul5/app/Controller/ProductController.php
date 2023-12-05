@@ -67,4 +67,63 @@ class ProductController
 
         return $this->apiResponse(200, "Success", $response);
     }
+
+    public function getAllWithDescription()
+    {
+        $productModel = new Product();
+        $response = $productModel->findAllWithCategory();
+
+        return $this->apiResponse(200, "Success", $response);
+    }
+
+    public function updateDescription($id)
+    {
+        $jsonInput = file_get_contents('php://input');
+        $inputData = json_decode($jsonInput, true);
+
+        if (json_last_error()) {
+            return $this->apiResponse(400, "Error Invalid Input", null);
+        }
+
+        $productModel = new Product();
+        $response = $productModel->updateDescription($inputData['isi_bersih'], $id);
+
+        return $this->apiResponse(200, "Success", $response);
+    }
+
+    public function deleteDescription($id)
+    {
+        $productModel = new Product();
+        $response = $productModel->deleteDescription($id);
+
+        return $this->apiResponse(200, "Success", $response);
+    }
+
+    public function insertDescriptionFromJson()
+    {
+        $jsonInput = file_get_contents('php://input');
+        $inputData = json_decode($jsonInput, true);
+
+        if (json_last_error()) {
+            return $this->apiResponse(400, "Error Invalid Input", null);
+        }
+
+        $id_desc = $inputData['id_desc'];
+        $producer = $inputData['producer'];
+        $isi_bersih = $inputData['isi_bersih'];
+        $jenis = $inputData['jenis'];
+
+        $productModel = new Product();
+        $response = $productModel->insertDescription($id_desc, $producer, $isi_bersih, $jenis);
+
+        return $this->apiResponse(200, "Success", $response);
+    }
+
+    public function getProductWithDescriptionById($id)
+    {
+        $productModel = new Product();
+        $response = $productModel->findProductWithDescriptionById($id);
+
+        return $this->apiResponse(200, "Success", $response);
+    }
 }

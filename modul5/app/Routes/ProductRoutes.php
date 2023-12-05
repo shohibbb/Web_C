@@ -42,5 +42,42 @@ class ProductRoutes
             $controller = new ProductController();
             echo $controller->delete($id);
         }
+
+        //get all pake deskripsi
+        if ($method == 'GET' && $path == '/api/productwithdescription') {
+            $controller = new ProductController();
+            echo $controller->getAllWithDescription();
+        }
+
+        //update description
+        if ($method == 'PUT' && strpos($path, '/api/productwithdescription') == 0) {
+            $pathParts = explode('/', $path);
+            $id = $pathParts[count($pathParts) - 1];
+
+            $controller = new ProductController();
+            echo $controller->updateDescription($id);
+        }
+
+        //hapus deskripsi
+        if ($method == 'DELETE' && strpos($path, '/api/productdescription') == 0) {
+            $pathParts = explode('/', $path);
+            $id = $pathParts[count($pathParts) - 1];
+
+            $controller = new ProductController();
+            echo $controller->deleteDescription($id);
+        }
+
+        if ($method == 'POST' && $path == '/api/productdescription') {
+            $controller = new ProductController();
+            echo $controller->insertDescriptionFromJson();
+        }
+
+        if ($method == 'GET' && strpos($path, '/api/productdescription') == 0) {
+            $pathParts = explode('/', $path);
+            $id = $pathParts[count($pathParts) - 1];
+
+            $controller = new ProductController();
+            echo $controller->getProductWithDescriptionById($id);
+        }
     }
 }
