@@ -113,4 +113,39 @@ class Product extends DatabaseConfig
         $stmt->close();
         $this->conn->close();
     }
+
+    public function insertDescription($id_desc, $producer, $isi_bersih, $jenis)
+    {
+        $sql = "INSERT INTO `description` (`id_desc`, `producer`, `isi_bersih`, `jenis`) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("ssss", $id_desc, $producer, $isi_bersih, $jenis);
+        $stmt->execute();
+        $stmt->close();
+        $this->conn->close();
+    }
+
+    public function findProductWithDescriptionById($id)
+    {
+        $sql = "SELECT product.id, product.product_name, description.producer, description.isi_bersih, description.jenis
+            FROM product
+            JOIN description on product.id = description.id_desc
+            WHERE product.id = ?";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        // Fetch the data into an associative array
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+
+        // Close the statement and connection
+        $stmt->close();
+        $this->conn->close();
+
+        return $data;
+    }
+
+
 }
