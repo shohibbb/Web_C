@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::prefix("v1")->group(function () {
     Route::apiResource("books", BookDescriptionController::class);
 });
+
+Route::post('auth/Register', \App\Http\Controllers\Api\Auth\RegisterController::class);
