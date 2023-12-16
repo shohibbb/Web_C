@@ -64,3 +64,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## My changes
+
+1. modul6\tugas-praktikum\database\migrations\2023_12_16_064046_create_book_descriptions_table.php
+2. modul6\tugas-praktikum\app\Models\BookDescription.php
+3. modul6\tugas-praktikum\app\Http\Controllers
+4. modul6\tugas-praktikum\app\Http\Requests
+5. modul6\tugas-praktikum\app\Http\Resources
+6. modul6\tugas-praktikum\routes\api.php
+7. modul6\tugas-praktikum\.env
