@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostBookDescriptionRequest extends FormRequest
+class UpdateBookDescriptionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,9 @@ class PostBookDescriptionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "title" => "string|required",
-            "author" => "string|required",
-            "publisher" => "string|required"
+            "title" => "string",
+            "author" => "string",
+            "publisher" => "string"
         ];
     }
 }
