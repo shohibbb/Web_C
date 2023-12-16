@@ -16,7 +16,7 @@ class RegisterController extends Controller
     public function __invoke(Request $request)
     {
         $this->validate($request, [
-            'name' => "string|required",
+            'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required', 'string', 'max:255', Rule::unique(User::class),
             ],
@@ -30,8 +30,6 @@ class RegisterController extends Controller
         ]);
         $token = $user->createToken('myAppToken');
 
-        return (new UserResource($user))->additional([
-            'token' => $token->plainTextToken,
-        ]);
+        return response()->json(['message' => 'Register successful', 'token' => $token->plainTextToken]);
     }
 }
