@@ -24,7 +24,8 @@ class UpdateBookDescriptionRequest extends FormRequest
         return [
             "title" => "string",
             "author" => "string",
-            "publisher" => "string"
+            "publisher" => "string",
+            "published" => "date"
         ];
     }
 }

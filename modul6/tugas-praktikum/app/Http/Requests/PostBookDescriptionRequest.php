@@ -24,7 +24,8 @@ class PostBookDescriptionRequest extends FormRequest
         return [
             "title" => "string|required",
             "author" => "string|required",
-            "publisher" => "string|required"
+            "publisher" => "string|required",
+            "published" => "date|required",
         ];
     }
 }

@@ -17,7 +17,8 @@ class BookDecriptionResource extends JsonResource
         return [
             "title" => $this->title,
             "author" => $this->author,
-            "publisher" => $this->publisher
+            "publisher" => $this->publisher,
+            "published" => $this->published
         ];
     }
 }
