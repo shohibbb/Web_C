@@ -20,3 +20,4 @@ Route::prefix("v1")->group(function () {
 });
 
 Route::post('auth/Register', \App\Http\Controllers\Api\Auth\RegisterController::class);
+Route::get('auth/Register', '\App\Http\Controllers\Api\Auth\RegisterController@getAllUsers');

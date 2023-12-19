@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserCollection;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -30,5 +32,15 @@ class RegisterController extends Controller
         $token = $user->createToken('myAppToken');
 
         return response()->json(['message' => 'Register successful', 'token' => $token->plainTextToken]);
+    }
+
+    public function getAllUsers()
+    {
+        try {
+            $users = User::all();
+            return response()->json(['message' => 'Success', 'data' => $users], 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
     }
 }
