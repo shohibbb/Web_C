@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Account Registration</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>ACCOUNT REGISTRATION FORM</h1>
+      </div>
+      <div class="content">
+        <p>Make sure that you fill this form correctly:</p>
+        <span>*</span> Wajib
+        <br />
+        <br />
+        <form id="registrationForm">
+          <div class="form-row">
+            <label for="nama">1. Full Name <span>*</span></label>
+            <input
+              class="full-input"
+              type="text"
+              placeholder="Your full name"
+              required
+              id="fullName"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama">2. Gender <span>*</span></label>
+            <input type="radio" name="gender" value="Male" />Male
+            <br />
+            <input type="radio" name="gender" value="Female" />Female
+          </div>
+          <div class="form-row">
+            <label for="nama">3. Email Address <span>*</span></label>
+            <input
+              class="full-input"
+              type="email"
+              placeholder="Your email address"
+              required
+              id="email"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama">4. Active Phone Number <span>*</span></label>
+            <input
+              class="full-input"
+              type="tel"
+              placeholder="Your phone number"
+              required
+              id="phoneNumber"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama">5. WhatsApp Number</label>
+            <p class="italic">*Leave blank if the same as the phone number.</p>
+            <input
+              class="full-input"
+              type="tel"
+              placeholder="Your WhatsApp number"
+              id="whatsappNumber"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama">6. City of Residence <span>*</span></label>
+            <input
+              class="full-input"
+              type="text"
+              placeholder="City where you currently live"
+              required
+              id="city"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama">7. Occupation <span>*</span></label>
+            <input type="radio" name="occupation" value="IT Professional" />IT
+            Professional
+            <br />
+            <input
+              type="radio"
+              name="occupation"
+              value="Private Employee"
+            />Private Employee
+            <br />
+            <input type="radio" name="occupation" value="Student" />Student
+            <br />
+            <input type="radio" name="occupation" value="Other" /><input
+              class="short-input"
+              type="text"
+              placeholder="Other"
+              id="otherOccupation"
+            />
+          </div>
+          <div class="form-row">
+            <label for="nama"
+              >8. Name of University/Company or Other Details
+              <span>*</span></label
+            >
+            <input
+              class="full-input"
+              type="text"
+              placeholder="Enter your answer"
+              required
+              id="details"
+            />
+          </div>
+          <div class="form-submit">
+            <button type="button" onclick="validateForm()">REGISTER</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function validateForm() {
+        // Implement your form validation logic here
+        var fullName = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        var city = document.getElementById("city").value;
+        var occupation = document.querySelector(
+          'input[name="occupation"]:checked'
+        );
+        var otherOccupation = document.getElementById("otherOccupation").value;
+        var details = document.getElementById("details").value;
+
+        // Example: Check if required fields are not empty
+        if (
+          !fullName ||
+          !email ||
+          !phoneNumber ||
+          !city ||
+          !occupation ||
+          !details
+        ) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // Example: Validate email format
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert("Please enter a valid email address.");
+          return;
+        }
+
+        // Example: Validate phone number format
+        var phoneRegex = /^\d{10,}$/;
+        if (!phoneRegex.test(phoneNumber)) {
+          alert("Please enter a valid phone number.");
+          return;
+        }
+
+        // Your additional validation logic goes here...
+
+        // If all validations pass, you can submit the form or perform other actions
+        alert("Form validated successfully. Submitting...");
+      }
+    </script>
+  </body>
+</html>
