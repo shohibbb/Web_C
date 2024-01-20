@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Program Kasir</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Program Kasir</h2>
+      <label for="quantity">Jumlah Barang:</label>
+      <input
+        type="number"
+        id="quantity"
+        placeholder="Masukkan jumlah barang"
+        required
+      />
+
+      <label for="price">Harga per Barang:</label>
+      <input
+        type="number"
+        id="price"
+        placeholder="Masukkan harga per barang"
+        required
+      />
+
+      <button onclick="calculateTotal()">Hitung Total</button>
+
+      <div id="result"></div>
+    </div>
+  </body>
+</html>
