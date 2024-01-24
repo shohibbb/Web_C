@@ -3,31 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Program Kasir</title>
+    <title>Kasir Mini Market</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h2>Program Kasir</h2>
-      <label for="quantity">Jumlah Barang:</label>
+      <h2>Kasir Mini Market</h2>
+
+      <!-- Input barcode -->
+      <label for="barcode">Scan Barcode:</label>
       <input
-        type="number"
-        id="quantity"
-        placeholder="Masukkan jumlah barang"
-        required
+        type="text"
+        id="barcode"
+        placeholder="Masukkan barcode"
+        oninput="handleBarcodeInput(event)"
       />
 
-      <label for="price">Harga per Barang:</label>
-      <input
-        type="number"
-        id="price"
-        placeholder="Masukkan harga per barang"
-        required
-      />
+      <!-- Tombol untuk menambah barang -->
+      <button onclick="addItem()">Tambah Barang</button>
 
-      <button onclick="calculateTotal()">Hitung Total</button>
+      <!-- Daftar barang yang sudah di-scan -->
+      <div id="itemList">
+        <h3>Daftar Barang:</h3>
+        <ul id="itemUl"></ul>
+      </div>
 
+      <!-- Total pembelian -->
       <div id="result"></div>
     </div>
+
+    <script>
+      const items = [];
+
+      function handleBarcodeInput(event) {
+        // Gunakan event.key atau event.code untuk menangkap input keyboard
+        const barcode = event.target.value;
+
+        // Proses logika scanning barcode (di sini dapat memanggil API atau melakukan operasi lainnya)
+        console.log("Scanning Barcode:", barcode);
+      }
+
+      function addItem() {
+        // Logika untuk menambah item ke daftar
+        const barcodeInput = document.getElementById("barcode");
+        const barcode = barcodeInput.value;
+
+        // Hanya tambahkan jika barcode tidak kosong
+        if (barcode.trim() !== "") {
+          items.push({ barcode });
+          barcodeInput.value = ""; // Bersihkan input setelah ditambahkan
+
+          // Tampilkan daftar barang yang sudah di-scan
+          displayItemList();
+        }
+      }
+
+      function displayItemList() {
+        const itemUl = document.getElementById("itemUl");
+        itemUl.innerHTML = ""; // Bersihkan daftar sebelum menampilkan kembali
+
+        // Tampilkan setiap item di daftar
+        items.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.textContent = `${index + 1}. Barcode: ${item.barcode}`;
+          itemUl.appendChild(li);
+        });
+
+        // Hitung total pembelian dan tampilkan
+        calculateTotal();
+      }
+
+      function calculateTotal() {
+        const totalElement = document.getElementById("result");
+        const total = items.length * 10; // Misalnya, harga per barang adalah 10
+        totalElement.textContent = `Total Pembelian: $${total.toFixed(2)}`;
+      }
+    </script>
   </body>
 </html>
